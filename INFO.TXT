@@ -1,0 +1,15 @@
+Seccion numero 8
+Iniciando con un servidor express - Peticiones HTTP GET, POST, PUT,DELETE
+
+
+Params = solo un numero ejemplo: localhost/prueba/1
+queryParams = mas valores: localhost:prueba?abc&123
+
+-conexiones con MONGODB utilizando mongoose
+
+-BcryptJS
+
+- ExpressValidator
+- operador ...
+ si se ocupa en los argumento es el operador rest
+ sino es el spread operator
