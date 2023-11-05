@@ -90,3 +90,6 @@ This Rest application has a basic CRUD of users and was created using the follow
 + Mongoose
 + Express Validators
 + BCrypt js
+
+# SignIn with Google account
+You can access it with a Google Account 

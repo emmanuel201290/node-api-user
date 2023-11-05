@@ -7,6 +7,7 @@ const Usuario = require('../models/usuario');
 const validarJWT = async( req = request, res = response, next ) => {
 
     const token = req.header('x-token');
+    console.log('token: ', token)
 
     if ( !token ) {
         return res.status(401).json({
@@ -18,6 +19,7 @@ const validarJWT = async( req = request, res = response, next ) => {
         
         const { uid } = jwt.verify( token, process.env.SECRETORPRIVATEKEY );
 
+        console.log(uid)
         // leer el usuario que corresponde al uid
         const usuario = await Usuario.findById( uid );
 
