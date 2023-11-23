@@ -20,7 +20,6 @@ const { usuariosGet,
 
 const router = Router();
 
-
 router.get('/', usuariosGet );
 
 router.put('/:id',[
@@ -50,9 +49,5 @@ router.delete('/:id',[
 ],usuariosDelete );
 
 router.patch('/', usuariosPatch );
-
-
-
-
 
 module.exports = router;
