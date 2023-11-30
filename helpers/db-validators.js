@@ -27,11 +27,21 @@ const existeUsuarioPorId = async( id ) => {
     }
 }
 
+const existeCategoria = async(usuario)=>{
+    console.log('usuario es: ',usuario)
+    const existeUsuario = await Usuario.findById(usuario);
+    if(!existeUsuario){
+        throw new Error(`El usuario no existe ${ usuario }`);
+    }
+};
+
+
 
 
 module.exports = {
     esRoleValido,
     emailExiste,
-    existeUsuarioPorId
+    existeUsuarioPorId,
+    existeCategoria
 }
 

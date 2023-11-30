@@ -1,18 +1,19 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarJWT, validarCampos } = require('../middlewares');
-const { crearCategoria } = require('../controllers/categorias');
+const { crearCategoria, obtenerCategoria } = require('../controllers/categorias');
+const { existeCategoria } = require('../helpers/db-validators');
 
 
 const router = Router();
 
-router.get('/', (req, res)=>{
-    res.json('get')
-})
+router.get('/', obtenerCategoria)
 
-router.get('/:id', (req, res)=>{
-    res.json('get')
-})
+router.get('/:id',[
+    check('id').custom(existeCategoria)
+], (req, res)=>{
+    res.json('get -id ')
+} )
 
 //crear categoria - privado -cualquier persona con un token valido
 router.post('/',[
